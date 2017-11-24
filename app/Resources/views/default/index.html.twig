@@ -1,0 +1,367 @@
+{% extends 'base.html.twig' %}
+
+
+{%  block body %}
+
+    <!-- Header -->
+    <header class="masthead">
+        <div class="container">
+            <div class="intro-text">
+                <div class="intro-lead-in">Votre isolation à 1euro en quelque clic</div>
+                <div class="intro-heading text-uppercase">Iso1euro.fr</div>
+                <a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" href="#contact">Tester votre eligibilité</a>
+            </div>
+        </div>
+    </header>
+
+
+    <!-- Portfolio Grid -->
+    <section id="portfolio">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2 class="section-heading text-uppercase">L’isolation, oui mais laquelle ?</h2>
+                    <p>L’ISOLATION À 1€* NE PEUT SE PRATIQUER QUE SUR LES COMBLES PERDU</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-3 col-sm-3 portfolio-item">
+                    <a class="portfolio-link" data-toggle="modal" href="#portfolioModal1">
+                        <div class="portfolio-hover">
+                            <div class="portfolio-hover-content">
+                                <i class="fa fa-plus fa-3x"></i>
+                            </div>
+                        </div>
+                        <img class="img-fluid" src="img/portfolio/01-thumbnail.jpg" alt="">
+                    </a>
+                    <div class="portfolio-caption">
+                        <h4>Les murs extérieurs</h4>
+                        <p class=>les murs</p>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-3 portfolio-item">
+                    <a class="portfolio-link" data-toggle="modal" href="#portfolioModal2">
+                        <div class="portfolio-hover">
+                            <div class="portfolio-hover-content">
+                                <i class="fa fa-plus fa-3x"></i>
+                            </div>
+                        </div>
+                        <img class="img-fluid" src="img/portfolio/02-thumbnail.jpg" alt="">
+                    </a>
+                    <div class="portfolio-caption">
+                        <h4>Les murs intérieurs </h4>
+                        <p class=>les murs</p>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-3 portfolio-item">
+                    <a class="portfolio-link" data-toggle="modal" href="#portfolioModal3">
+                        <div class="portfolio-hover">
+                            <div class="portfolio-hover-content">
+                                <i class="fa fa-plus fa-3x"></i>
+                            </div>
+                        </div>
+                        <img class="img-fluid" src="img/portfolio/03-thumbnail.jpg" alt="">
+                    </a>
+                    <div class="portfolio-caption">
+                        <h4>Les comble aménagé</h4>
+                        <p class=>La toiture</p>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-3 portfolio-item">
+                    <a class="portfolio-link" data-toggle="modal" href="#portfolioModal4">
+                        <div class="portfolio-hover">
+                            <div class="portfolio-hover-content">
+                                <i class="fa fa-plus fa-3x"></i>
+                            </div>
+                        </div>
+                        <img class="img-fluid" src="img/portfolio/04-thumbnail.jpg" alt="">
+                    </a>
+                    <div class="portfolio-caption">
+                        <h4>Les combles perdues</h4>
+                        <p class=>La toiture</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" href="#contact">Tester votre éligibilité</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services -->
+    <section class="bg-light-blue" id="services">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2 class="section-heading text-uppercase">Les conditions d’éligibilité</h2>
+                </div>
+            </div>
+            <div class="row text-center">
+                <div class="col-md-3">
+            <span class="fa-stack fa-4x">
+              <i class="fa fa-circle fa-stack-2x text-primary"></i>
+              <i class="fa fa-home fa-stack-1x fa-inverse"></i>
+            </span>
+                    <!-- <h4 class="service-heading">Être propriétaire ou locataire d'une maison individuelle de plus de 2 ans</h4> -->
+                    <p class=>Être propriétaire ou locataire d'une maison individuelle de plus de 2 ans</p>
+                </div>
+                <div class="col-md-3">
+            <span class="fa-stack fa-4x">
+              <i class="fa fa-circle fa-stack-2x text-primary"></i>
+              <i class="fa fa-fire fa-stack-1x fa-inverse"></i>
+            </span>
+                    <!-- <h4 class="service-heading">Le type de chauffage doit être considéré comme polluant (gaz, bois, fioul, GPL ou autres combustibles), l’électricité est accepté. cvc</h4>
+                    --><p class=>Le type de chauffage doit être considéré comme polluant (gaz, bois, fioul, GPL ou autres combustibles), l’électricité est accepté. cvc</p>
+                </div>
+                <div class="col-md-3">
+            <span class="fa-stack fa-4x">
+              <i class="fa fa-circle fa-stack-2x text-primary"></i>
+              <i class="fa fa-money fa-stack-1x fa-inverse"></i>
+            </span>
+                    <!-- <h4 class="service-heading">Votre revenu fiscal de référence ne doit pas dépasser les plafonds fixés dans le barème établi par l'ANAH </h4> -->
+                    <p class=>Votre revenu fiscal de référence ne doit pas dépasser les plafonds fixés dans le barème établi par <a href="http://www.anah.fr/proprietaires/proprietaires-occupants/les-conditions-de-ressources/" target="_blank">l'ANAH</a> </p>
+                </div>
+                <div class="col-md-3">
+            <span class="fa-stack fa-4x">
+              <i class="fa fa-circle fa-stack-2x text-primary"></i>
+              <i class="fa fa-bolt fa-stack-1x fa-inverse"></i>
+            </span>
+                    <!-- <h4 class="service-heading">Votre revenu fiscal de référence ne doit pas dépasser les plafonds fixés dans le barème établi par l'ANAH </h4> -->
+                    <p class=>La zone climatique de votre lieu de résidence</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" href="#contact">Tester votre éligibilité</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About -->
+    <section id="about">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2 class="section-heading text-uppercase">Comment ça marche ?</h2>
+                    <p >Via le dispositif des Certificats d’Economie d’énergie de la lois TRE, 12M de Français, peuvent bénéficier de se programme d’isolation à 1euro. Iso-1euro.fr by V3E, permet en ligne et en toute simplicité de réaliser votre demande de prise en charge, un conseiller vous recontacte immédiatement pour faire le points et prendre rdv pour les travaux. Tout l’aspect administratif est totalement gérer. Il vous reste plus qu’a profiter de votre confort.</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <ul class="timeline">
+                        <li>
+                            <div class="timeline-image">
+                                <img class="rounded-circle img-fluid" src="img/about/1.jpg" alt="">
+                            </div>
+                            <div class="timeline-panel">
+                                <div class="timeline-body">
+                                    <p class=>Inscrivez-vous sur notre site, nous vous appellerons pour valider avec vous les caractéristiques de votre habitation ainsi que le montant de vos revenus.</p>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="timeline-inverted">
+                            <div class="timeline-image">
+                                <img class="rounded-circle img-fluid" src="img/about/2.jpg" alt="">
+                            </div>
+                            <div class="timeline-panel">
+                                <div class="timeline-body">
+                                    <p class=>Après vérification de vos informations, nous vous adressons un devis que vous devez nous renvoyer signé (signature électronique si possible) et accompagné des copies des pièces justificatives par courrier ou en ligne, Ainsi que les photo de vos combles.</p>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="timeline-image">
+                                <img class="rounded-circle img-fluid" src="img/about/3.jpg" alt="">
+                            </div>
+                            <div class="timeline-panel">
+                                <div class="timeline-body">
+                                    <p class=>Si nous validons les informations, une visite technique gratuite peut être prévue pour s’assurer de la faisabilité technique de votre chantier. </p>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="timeline-inverted">
+                            <div class="timeline-image">
+                                <img class="rounded-circle img-fluid" src="img/about/4.jpg" alt="">
+                            </div>
+                            <div class="timeline-panel">
+                                <div class="timeline-body">
+                                    <p class=>Après validation de votre dossier vos travaux seront réalisés dans un délai de 3 semaines maximum.</p>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="timeline-image">
+                                <img class="rounded-circle img-fluid" src="img/about/3.jpg" alt="">
+                            </div>
+                            <div class="timeline-panel">
+                                <div class="timeline-body">
+                                    <p class=>Vos travaux sont réalisés en moyenne en moins de 3 heures.</p>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="timeline-inverted">
+                            <a class="text-uppercase js-scroll-trigger" href="#contact"><div class="timeline-image">
+                                    <h4>Tester
+                                        <br>Votre
+                                        <br>éligibilité</h4>
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="bg-light-blue" id="contact">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2 class="section-heading text-uppercase">Tester votre Eligibilité</h2>
+
+                    {% for flash_message in app.session.flashBag.get('eligible') %}
+                        <div class="flash-notice alert alert-success">
+                            {{ flash_message }}
+                        </div>
+                    {% endfor %}
+                    {% for flash_message in app.session.flashBag.get('notEligible') %}
+                        <div class="flash-notice alert alert-warning">
+                            {{ flash_message }}
+                        </div>
+                    {% endfor %}
+                    {% for flash_message in app.session.flashBag.get('error') %}
+                        <div class="flash-notice alert alert-danger">
+                            {{ flash_message }}
+                        </div>
+                    {% endfor %}
+
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    {{ form_start(form, {'attr': {'novalidate': '', 'id': 'test_elibilility'}}) }}
+                        <div class="row">
+                            <div class="col-md-12 text-center">
+                                <div class="form-group">
+                                    {{ form_label(form.loftType) }}<br><br>
+                                    {% for loftType in form.loftType %}
+                                        <label>
+                                            {{ form_widget(loftType) }}
+                                            <span class="radio">{{ loftType.vars.label }}</span>
+                                        </label>
+                                    {% endfor %}
+                                    <p class="help-block text-danger">{{ form_errors(form.loftType) }}</p>
+                                </div>
+                            </div>
+                            <div class="col-md-12 text-center">
+                                <div class="form-group">
+                                    {{ form_label(form.heatSystem) }}<br><br>
+                                    {% for heatSystem in form.heatSystem %}
+                                        <label>
+                                            {{ form_widget(heatSystem) }}
+                                            <span class="radio">{{ heatSystem.vars.label }}</span>
+                                        </label>
+                                    {% endfor %}
+                                    <p class="help-block text-danger">{{ form_errors(form.heatSystem) }}</p>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    {{ form_label(form.livrableSurface) }}
+                                    {{ form_widget(form.livrableSurface, {'attr': {'class': 'form-control'}}) }}
+                                    <p class="help-block text-danger">{{ form_errors(form.livrableSurface) }}</p>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    {{ form_label(form.loftSurface) }}
+                                    {{ form_widget(form.loftSurface, {'attr': {'class': 'form-control'}}) }}
+                                    <p class="help-block text-danger">{{ form_errors(form.loftSurface) }}</p>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    {{ form_label(form.household) }}
+                                    {{ form_widget(form.household, {'attr': {'class': 'form-control'}}) }}
+                                    <p class="help-block text-danger">{{ form_errors(form.household) }}</p>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    {{ form_label(form.incomeTaxReference) }}
+                                    {{ form_widget(form.incomeTaxReference, {'attr': {'class': 'form-control'}}) }}
+                                    <p class="help-block text-danger">{{ form_errors(form.incomeTaxReference) }}</p>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    {{ form_label(form.name) }}
+                                    {{ form_widget(form.name, {'attr': {'class': 'form-control'}}) }}
+                                    <p class="help-block text-danger">{{ form_errors(form.name) }}</p>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    {{ form_label(form.firstName) }}
+                                    {{ form_widget(form.firstName, {'attr': {'class': 'form-control'}}) }}
+                                    <p class="help-block text-danger">{{ form_errors(form.firstName) }}</p>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    {{ form_label(form.phone) }}
+                                    {{ form_widget(form.phone, {'attr': {'class': 'form-control'}}) }}
+                                    <p class="help-block text-danger">{{ form_errors(form.phone) }}</p>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    {{ form_label(form.zipCode) }}
+                                    {{ form_widget(form.zipCode, {'attr': {'class': 'form-control' }}) }}
+                                    <p class="help-block text-danger">{{ form_errors(form.zipCode) }}</p>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    {{ form_label(form.city) }}
+                                    {{ form_widget(form.city, {'attr': {'class': 'form-control'}}) }}
+                                    <p class="help-block text-danger">{{ form_errors(form.city) }}</p>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    {{ form_label(form.email) }}
+                                    {{ form_widget(form.email, {'attr': {'class': 'form-control'}}) }}
+                                    <p class="help-block text-danger">{{ form_errors(form.email) }}</p>
+                                </div>
+                            </div>
+                            <div class="col-md-12 text-center">
+                                <div class="form-group">
+                                    {{ form_label(form.callAvailability) }}<br><br>
+                                    {% for callAvailability in form.callAvailability %}
+                                        <label>
+                                            {{ form_widget(callAvailability) }}
+                                            <span class="radio">{{ callAvailability.vars.label }}</span>
+                                        </label>
+                                    {% endfor %}
+                                    <p class="help-block text-danger">{{ form_errors(form.callAvailability) }}</p>
+                                </div>
+                            </div>
+                            <div class="clearfix"></div>
+                            <div class="col-md-12 text-center">
+                                <div id="success"></div>
+
+                                <button type="submit" class="btn btn-primary btn-xl text-uppercase">Valider</button>
+                            </div>
+                        </div>
+                    {{ form_end(form) }}
+                </div>
+            </div>
+        </div>
+    </section>
+
+{% endblock %}
