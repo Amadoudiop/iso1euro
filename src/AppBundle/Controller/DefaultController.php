@@ -61,10 +61,13 @@ class DefaultController extends Controller
      */
     public function eligibilityAction(Request $request)
     {
-        //$json = $request->request->get();
+        $json = $request->request->get('formData');
         dump('yo');
-        //dump($json);
+        var_dump($json);
+        dump($json);
         die;
+        $response = 'success';
+        return $response;
     }
 
 

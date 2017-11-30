@@ -26,7 +26,12 @@ class Prospect
 
     /**
      * @var float
+
      * @Assert\NotBlank
+     * @Assert\Range(
+     *      min = 10,
+     *      minMessage = "minimum 10",
+     * )
      * @ORM\Column(name="livrable_surface", type="float", length=10)
      */
     private $livrableSurface;
@@ -34,14 +39,21 @@ class Prospect
     /**
      * @var float
      * @Assert\NotBlank
+     * @Assert\Range(
+     *      min = 10,
+     *      minMessage = "minimum 10",
+     * )
      * @ORM\Column(name="loft_surface", type="float", length=10)
      */
     private $loftSurface;
 
     /**
-     * @var string
+     * @var int
      * @Assert\NotBlank
-     *
+     * @Assert\Range(
+     *      min = 1,
+     *      minMessage = "Il doit avoir au moins une personne dans le foyer",
+     * )
      * @ORM\Column(name="household", type="string", length=125)
      */
     private $household;
@@ -49,6 +61,11 @@ class Prospect
     /**
      * @var float
      * @Assert\NotBlank
+     * @Assert\NotBlank
+     * @Assert\Range(
+     *      min = 1,
+     *      minMessage = "minimum 1su",
+     * )
      * @ORM\Column(name="income_tax_reference", type="float", length=10)
      */
     private $incomeTaxReference;
@@ -81,6 +98,7 @@ class Prospect
 
     /**
      * @var string
+     * @Assert\NotBlank
      * @ProspectAssert\IsPhone
      * @ORM\Column(name="phone", type="string", length=12)
      */
@@ -104,6 +122,10 @@ class Prospect
     /**
      * @var string
      * @Assert\NotBlank
+     * @Assert\Email(
+     *     message = "L'email '{{ value }}' n'est pas valide.",
+     *     checkMX = true
+     * )
      * @ORM\Column(name="email", type="string", length=125)
      */
     private $email;
