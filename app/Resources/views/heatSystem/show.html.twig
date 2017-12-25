@@ -1,0 +1,36 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Heatsystem</h1>
+
+    <table>
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ heatSystem.id }}</td>
+            </tr>
+            <tr>
+                <th>Label</th>
+                <td>{{ heatSystem.label }}</td>
+            </tr>
+            <tr>
+                <th>Img</th>
+                <td>{{ heatSystem.img }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('heatsystem_index') }}">Back to the list</a>
+        </li>
+        <li>
+            <a href="{{ path('heatsystem_edit', { 'id': heatSystem.id }) }}">Edit</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+{% endblock %}

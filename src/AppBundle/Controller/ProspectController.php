@@ -11,20 +11,20 @@ use Symfony\Component\HttpFoundation\Request;
 /**
  * Prospect controller.
  *
- * @Route("admin/prospect")
+ * @Route("test/prospect")
  */
 class ProspectController extends Controller
 {
     /**
      * Lists all prospect entities.
      *
-     * @Route("/", name="prospect_index")
+     * @Route("s", name="prospectIndex")
      * @Method("GET")
      */
     public function indexAction()
     {
         $em = $this->getDoctrine()->getManager();
-        $prospects = $em->getRepository('AppBundle:Oeuvre')->findAll();
+        $prospects = $em->getRepository('AppBundle:Prospect')->findAll();
 
         return $this->render('prospect/index.html.twig', array(
             'prospects' => $prospects,
@@ -34,13 +34,13 @@ class ProspectController extends Controller
     /**
      * Creates a new prospect entity.
      *
-     * @Route("/new", name="prospect_new")
+     * @Route("/new", name="prospectNew")
      * @Method({"GET", "POST"})
      */
     public function newAction(Request $request)
     {
         $prospect = new Prospect();
-        $form = $this->createForm('AppBundle\Form\ProspectType', $prospect);
+        $form = $this->createForm('AppBundle\Form\ProspectAdminType', $prospect);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
@@ -51,7 +51,7 @@ class ProspectController extends Controller
             return $this->redirectToRoute('homepage', array('id' => $prospect->getId()));
         }
 
-        return $this->render('prospect/new.html.twig', array(
+        return $this->render('prospect/newAdmin.html.twig', array(
             'prospect' => $prospect,
             'form' => $form->createView(),
         ));
@@ -60,7 +60,7 @@ class ProspectController extends Controller
     /**
      * Finds and displays a prospect entity.
      *
-     * @Route("/{id}", name="prospect_show")
+     * @Route("/{id}", name="prospectShow")
      * @Method("GET")
      */
     public function showAction(Prospect $prospect)
@@ -76,19 +76,21 @@ class ProspectController extends Controller
     /**
      * Displays a form to edit an existing prospect entity.
      *
-     * @Route("/{id}/edit", name="prospect_edit")
+     * @Route("/{id}/edit", name="prospectEdit")
      * @Method({"GET", "POST"})
      */
     public function editAction(Request $request, Prospect $prospect)
     {
         $deleteForm = $this->createDeleteForm($prospect);
-        $editForm = $this->createForm('AppBundle\Form\ProspectType', $prospect);
+        $editForm = $this->createForm('AppBundle\Form\ProspectAdminType', $prospect);
         $editForm->handleRequest($request);
 
         if ($editForm->isSubmitted() && $editForm->isValid()) {
-            $this->getDoctrine()->getManager()->flush();
+            $em =$this->getDoctrine()->getManager();
+            $prospect->setLastUpdate(new \DateTime());
+            $em->flush();
 
-            return $this->redirectToRoute('prospect_edit', array('id' => $prospect->getId()));
+            return $this->redirectToRoute('prospectEdit', array('id' => $prospect->getId()));
         }
 
         return $this->render('prospect/edit.html.twig', array(
@@ -101,7 +103,7 @@ class ProspectController extends Controller
     /**
      * Deletes a prospect entity.
      *
-     * @Route("/{id}", name="prospect_delete")
+     * @Route("/{id}", name="prospectDelete")
      * @Method("DELETE")
      */
     public function deleteAction(Request $request, Prospect $prospect)
@@ -128,7 +130,7 @@ class ProspectController extends Controller
     private function createDeleteForm(Prospect $prospect)
     {
         return $this->createFormBuilder()
-            ->setAction($this->generateUrl('prospect_delete', array('id' => $prospect->getId())))
+            ->setAction($this->generateUrl('prospectDelete', array('id' => $prospect->getId())))
             ->setMethod('DELETE')
             ->getForm()
         ;

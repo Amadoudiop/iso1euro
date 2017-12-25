@@ -10,4 +10,8 @@ namespace AppBundle\Repository;
  */
 class ProspectRepository extends \Doctrine\ORM\EntityRepository
 {
+    public function findAll()
+    {
+        return $this->findBy(array(), array('lastUpdate' => 'DESC'));
+    }
 }

@@ -1,0 +1,69 @@
+{% extends 'base_back.html.twig' %}
+
+{% block body %}
+    <h1>Prospect</h1>
+
+    <table>
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ prospect.id }}</td>
+            </tr>
+            <tr>
+                <th>Nom Prénom</th>
+                <td>{{ prospect.name }} {{ prospect.firstName }}</td>
+            </tr>
+            <tr>
+                <th>Télephone</th>
+                <td>{{ prospect.phone }}</td>
+            </tr>
+            <tr>
+                <th>Email</th>
+                <td>{{ prospect.email }}</td>
+            </tr>
+            <tr>
+                <th>Ville </th>
+                <td>{{ prospect.city }} {{ prospect.zipCode }}</td>
+            </tr>
+            <tr>
+                <th>Habitation</th>
+                <td>{{ prospect.loftType.label }}</td>
+            </tr>
+            <tr>
+                <th>Système de chauffage</th>
+                <td>{{ prospect.heatSystem.label }}</td>
+            </tr>
+            <tr>
+                <th>Livrable Surface</th>
+                <td>{{ prospect.livrableSurface }}</td>
+            </tr>
+            <tr>
+                <th>Loft Surface</th>
+                <td>{{ prospect.loftSurface }}</td>
+            </tr>
+            <tr>
+                <th>Household</th>
+                <td>{{ prospect.household }}</td>
+            </tr>
+            <tr>
+                <th>Income Tax Reference</th>
+                <td>{{ prospect.incomeTaxReference }}</td>
+            </tr>
+            <tr>
+                <th>Disponibilité</th>
+                <td>{{ prospect.callAvailability.label }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('prospect_index') }}">Back to the list</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+{% endblock %}

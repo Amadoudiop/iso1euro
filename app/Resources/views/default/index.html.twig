@@ -23,7 +23,7 @@
                 </div>
             </div>
             <div class="row text-center">
-                <div class="col-lg-12 text-justify">
+                <div class="col-lg-12 text-justify text-muted">
                     <p>La certification dont Sarl Verteck 3E fait l’objet vous permettra de bénéficier de l’éco-PTZ et du crédit d’impôt pour vos travaux de rénovation énergétique. De plus, ces dispositifs sont pleinement compatibles avec les primes énergies, de quoi alléger encore plus la facture de vos travaux !
                         VERTECK 3E est une société spécialisée dans le domaine de la rénovation de l’habitat et des énergies renouvelables. Notre solide expérience nous permet de mener à bien votre projet. Développement durable et respect de l’environnement sont des valeurs primordiales pour notre société.
                         C’est pourquoi nous sélectionnons pour vous les meilleurs produits, tous de hautes qualités et respectueuses des normes européennes.<br>
@@ -50,7 +50,7 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-lg-12 text-justify">
+                <div class="col-lg-12 text-justify text-muted">
                     <p>À la suite de la loi POPE (loi de Programmation fixant les Orientations de la Politique Energétique) qui a pour objectif principal de faire des économies d'énergies et de lutter contre la précarité énergétique.
                         En France, le programme isolation à 1 euro est lancé pour soutenir de façon pertinente la rénovation énergétique. Ce plan de solidarité étatique correspond aux besoins de millions de foyers français désireux d’entreprendre des travaux de d’amélioration énergétique sur leur logement. Il s’agit d’une solution efficace et à moindre coût.
                     </p>
@@ -131,7 +131,7 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-lg-12 text-justify">
+                <div class="col-lg-12 text-justify text-muted">
                     <p>Notre programme d'isolation est adressé aux particuliers propriétaires et locataires à faibles ressources. Il est destiné aux habitations achevées depuis plus de 2 ans, situées sur le territoire français et ayant des combles perdus.
                         Nous vous garantissons des travaux de qualité avec des artisans partenaires certifiés RGE, des isolant avec une forte résistance thermique supérieure à 7, une technique de soufflage pour une isolation optimale.
                         Une isolation performante pour réduire jusqu’à 30% votre facture de chauffage !
@@ -189,7 +189,7 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-lg-12 text-justify">
+                <div class="col-lg-12 text-justify text-muted">
                     <p>Le but étant de renforcer son indépendance énergétique en équilibrant mieux ses différentes sources d’approvisionnement. L'isolation fait partie des travaux indispensables à l'amélioration thermique des bâtiments. Chaque énergéticien est obligé de racheter à des particuliers les factures de travaux d'économie d'énergie en leur versant une prime appelée CEE (Contribution Energie Climat).
 
                         Le dispositif agréé par L'État a été défini par la loi adoptée à l’été 2015, relative à la transition énergétique pour la croissance verte ainsi que tous les plans d’action permettant à la France de contribuer plus efficacement à la lutte contre le dérèglement climatique.</p>
@@ -239,14 +239,6 @@
                                 </div>
                             </div>
                         </li>
-                        <li class="timeline-inverted">
-                            <a class="text-uppercase js-scroll-trigger" href="#contact"><div class="timeline-image">
-                                    <h4>Tester
-                                        <br>Votre
-                                        <br>éligibilité</h4>
-                                </div>
-                            </a>
-                        </li>
                     </ul>
                 </div>
             </div>
@@ -282,7 +274,7 @@
                 <div class="col-md-12">
                     {{ form_start(form, {'attr': {'novalidate': '', 'id': 'test_elibilility'}}) }}
                         <div class="row">
-                            <div class="col-md-12 text-center">
+                            <div id="firstStep" class="col-md-12 text-center">
                                 <div id="hey" class="form-group">
                                     {{ form_label(form.loftType) }}<br><br>
                                     {% for loftType in form.loftType %}
@@ -294,105 +286,138 @@
                                     <p class="help-block text-danger">{{ form_errors(form.loftType) }}</p>
                                 </div>
                             </div>
-                            <div class="col-md-12 text-center">
+                            <div id="secondStep" class="col-md-12 text-center">
                                 <div class="form-group">
                                     {{ form_label(form.heatSystem) }}<br><br>
                                     {% for heatSystem in form.heatSystem %}
                                         <label>
                                             {{ form_widget(heatSystem) }}
-                                            <span class="radio">{{ heatSystem.vars.label }}</span>
+                                            {% set heatLabel= heatSystem.vars.label|split('#') %}
+                                            <span class="radio">{{ heatLabel[0] }}</span>
+                                            <img src="{{ absolute_url(simple_directory) }}{{ heatLabel[1] }}">
                                         </label>
                                     {% endfor %}
                                     <p class="help-block text-danger">{{ form_errors(form.heatSystem) }}</p>
                                 </div>
-                            </div>
-                            <div class="col-md-6">
                                 <div class="form-group">
-                                    {{ form_label(form.livrableSurface) }}
-                                    {{ form_widget(form.livrableSurface, {'attr': {'class': 'form-control'}}) }}
-                                    <p class="help-block text-danger">{{ form_errors(form.livrableSurface) }}</p>
+                                    <span class="btn btn-primary btn-xl text-uppercase btn-return">Retour</span>
                                 </div>
                             </div>
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    {{ form_label(form.loftSurface) }}
-                                    {{ form_widget(form.loftSurface, {'attr': {'class': 'form-control'}}) }}
-                                    <p class="help-block text-danger">{{ form_errors(form.loftSurface) }}</p>
+                            <div id="thirdStep" class="col-md-12 no-padding">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        {{ form_label(form.livrableSurface) }}
+                                        {{ form_widget(form.livrableSurface, {'attr': {'class': 'form-control'}}) }}
+                                        <p class="help-block text-danger">{{ form_errors(form.livrableSurface) }}</p>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        {{ form_label(form.loftSurface) }}
+                                        {{ form_widget(form.loftSurface, {'attr': {'class': 'form-control'}}) }}
+                                        <p class="help-block text-danger">{{ form_errors(form.loftSurface) }}</p>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        {{ form_label(form.household) }}
+                                        {{ form_widget(form.household, {'attr': {'class': 'form-control'}}) }}
+                                        <p class="help-block text-danger">{{ form_errors(form.household) }}</p>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        {{ form_label(form.incomeTaxReference) }}
+                                        {{ form_widget(form.incomeTaxReference, {'attr': {'class': 'form-control'}}) }}
+                                        <p class="help-block text-danger">{{ form_errors(form.incomeTaxReference) }}</p>
+                                    </div>
+                                </div>
+                                <div class="col-md-12 errorHandler">
+                                    <div class="form-group">
+                                        <p class="help-block text-danger"></p>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <span class="btn btn-primary btn-xl text-uppercase btn-return">Retour</span>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 text-right">
+                                    <div class="form-group">
+                                        <span class="btn btn-primary btn-xl text-uppercase btn-next" disabled>Suivant</span>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    {{ form_label(form.household) }}
-                                    {{ form_widget(form.household, {'attr': {'class': 'form-control'}}) }}
-                                    <p class="help-block text-danger">{{ form_errors(form.household) }}</p>
+                            <div id="fourthStep">
+                                <div class="col-md-6">
+                                    <div id="name" class="form-group">
+                                        {{ form_label(form.name) }}
+                                        {{ form_widget(form.name, {'attr': {'class': 'form-control'}}) }}
+                                        <p class="help-block text-danger">{{ form_errors(form.name) }}</p>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    {{ form_label(form.incomeTaxReference) }}
-                                    {{ form_widget(form.incomeTaxReference, {'attr': {'class': 'form-control'}}) }}
-                                    <p class="help-block text-danger">{{ form_errors(form.incomeTaxReference) }}</p>
+                                <div class="col-md-6">
+                                    <div id="firstName" class="form-group">
+                                        {{ form_label(form.firstName) }}
+                                        {{ form_widget(form.firstName, {'attr': {'class': 'form-control'}}) }}
+                                        <p class="help-block text-danger">{{ form_errors(form.firstName) }}</p>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    {{ form_label(form.name) }}
-                                    {{ form_widget(form.name, {'attr': {'class': 'form-control'}}) }}
-                                    <p class="help-block text-danger">{{ form_errors(form.name) }}</p>
+                                <div class="col-md-6">
+                                    <div id="phone" class="form-group">
+                                        {{ form_label(form.phone) }}
+                                        {{ form_widget(form.phone, {'attr': {'class': 'form-control'}}) }}
+                                        <p class="help-block text-danger">{{ form_errors(form.phone) }}</p>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    {{ form_label(form.firstName) }}
-                                    {{ form_widget(form.firstName, {'attr': {'class': 'form-control'}}) }}
-                                    <p class="help-block text-danger">{{ form_errors(form.firstName) }}</p>
+                                <div class="col-md-6">
+                                    <div id="zipCode" class="form-group">
+                                        {{ form_label(form.zipCode) }}
+                                        {{ form_widget(form.zipCode, {'attr': {'class': 'form-control' }}) }}
+                                        <p class="help-block text-danger">{{ form_errors(form.zipCode) }}</p>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    {{ form_label(form.phone) }}
-                                    {{ form_widget(form.phone, {'attr': {'class': 'form-control'}}) }}
-                                    <p class="help-block text-danger">{{ form_errors(form.phone) }}</p>
+                                <div class="col-md-6">
+                                    <div id="city" class="form-group">
+                                        {{ form_label(form.city) }}
+                                        {{ form_widget(form.city, {'attr': {'class': 'form-control'}}) }}
+                                        <p class="help-block text-danger">{{ form_errors(form.city) }}</p>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    {{ form_label(form.zipCode) }}
-                                    {{ form_widget(form.zipCode, {'attr': {'class': 'form-control' }}) }}
-                                    <p class="help-block text-danger">{{ form_errors(form.zipCode) }}</p>
+                                <div class="col-md-6">
+                                    <div id="email" class="form-group">
+                                        {{ form_label(form.email) }}
+                                        {{ form_widget(form.email, {'attr': {'class': 'form-control'}}) }}
+                                        <p class="help-block text-danger">{{ form_errors(form.email) }}</p>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    {{ form_label(form.city) }}
-                                    {{ form_widget(form.city, {'attr': {'class': 'form-control'}}) }}
-                                    <p class="help-block text-danger">{{ form_errors(form.city) }}</p>
+                                <div class="col-md-12 text-center">
+                                    <div class="form-group">
+                                        {{ form_label(form.callAvailability) }}<br><br>
+                                        {% for callAvailability in form.callAvailability %}
+                                            <label>
+                                                {{ form_widget(callAvailability) }}
+                                                <span class="radio">{{ callAvailability.vars.label }}</span>
+                                            </label>
+                                        {% endfor %}
+                                        <p class="help-block text-danger">{{ form_errors(form.callAvailability) }}</p>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    {{ form_label(form.email) }}
-                                    {{ form_widget(form.email, {'attr': {'class': 'form-control'}}) }}
-                                    <p class="help-block text-danger">{{ form_errors(form.email) }}</p>
+                                <div class="col-md-12 text-right">
+                                    <div class="form-group">
+                                        <p class="help-block warning">Vous devez remplir tous les champs</p>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="col-md-12 text-center">
-                                <div class="form-group">
-                                    {{ form_label(form.callAvailability) }}<br><br>
-                                    {% for callAvailability in form.callAvailability %}
-                                        <label>
-                                            {{ form_widget(callAvailability) }}
-                                            <span class="radio">{{ callAvailability.vars.label }}</span>
-                                        </label>
-                                    {% endfor %}
-                                    <p class="help-block text-danger">{{ form_errors(form.callAvailability) }}</p>
+                                <div class="clearfix"></div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <span class="btn btn-primary btn-xl text-uppercase btn-return">Retour</span>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="clearfix"></div>
-                            <div class="col-md-12 text-center">
-                                <div id="success"></div>
-
-                                <button type="submit" class="btn btn-primary btn-xl text-uppercase">Valider</button>
+                                <div class="col-md-16 text-right">
+                                    <div id="success"></div>
+                                    <button type="submit" id="submit" class="btn btn-primary btn-xl text-uppercase">Valider</button>
+                                </div>
                             </div>
                         </div>
                     {{ form_end(form) }}

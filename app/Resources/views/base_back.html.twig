@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+	<head>
+        <title>{% block title %}LCDC | {% endblock %}</title>
+
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		<link rel="stylesheet" type="text/css" href="{{ asset('css/vendor.css') }}">
+		<link rel="stylesheet" type="text/css" href="{{ asset('css/flat-admin.css') }}">
+
+		<!-- Theme -->
+		<!-- <link rel="stylesheet" type="text/css" href="{{ asset('css/theme/blue-sky.css') }}">
+		<link rel="stylesheet" type="text/css" href="{{ asset('css/theme/blue.css') }}">
+		<link rel="stylesheet" type="text/css" href="{{ asset('css/theme/red.css') }}">
+		<link rel="stylesheet" type="text/css" href="{{ asset('css/theme/yellow.css') }}"> -->
+		<link rel="stylesheet" type="text/css" href="{{ asset('css/creemson.css') }}">
+		<!-- <link rel="stylesheet" type="text/css" href="{{ asset('css/rating.min.css') }}"> -->
+
+		<!-- Date picker -->
+		<!--
+		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
+		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/js/bootstrap-datetimepicker.min.js"></script>
+
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" />
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/css/bootstrap-datetimepicker.min.css" />
+		-->
+		<script src="{{ asset('js/tinymce/tinymce.min.js') }}"></script>
+		<script>tinymce.init({ selector:'textarea' });</script>
+		{% block stylesheets %}{% endblock %}
+	</head>
+	<body>
+		<div class="app app-default">
+			<aside class="app-sidebar" id="sidebar">
+			  <div class="sidebar-header">
+			    <a class="sidebar-brand" href="#"><span class="highlight">Iso1euro</span> Admin</a>
+			    <a class="" href="{{ path('homepage') }}" target="blank"><span class="highlight">homepage</span> </a>
+			    <button type="button" class="sidebar-toggle">
+			      <i class="fa fa-times"></i>
+			    </button>
+			  </div>
+			  <div class="sidebar-menu">
+			    <ul class="sidebar-nav">
+			      <li class="">
+			        <a href="{{ path('dashboard') }}">
+			          <div class="icon">
+			            <i class="fa fa-tasks" aria-hidden="true"></i>
+			          </div>
+			          <div class="title">Dashboard</div>
+			        </a>
+			      </li>
+                    <li>
+			        <a href="{{ path('prospectIndex') }}">
+			          <div class="icon">
+			            <i class="fa fa-group" aria-hidden="true"></i>
+			          </div>
+			          <div class="title">Prospects</div>
+			        </a>
+			      </li>
+			      <li>
+			        <a href="{{ path('callAvailabilityIndex') }}">
+			          <div class="icon">
+			            <i class="fa fa-group" aria-hidden="true"></i>
+			          </div>
+			          <div class="title">Disponibilités</div>
+			        </a>
+			      </li>
+			      <li>
+			        <a href="{{ path('heatSystemIndex') }}">
+			          <div class="icon">
+			            <i class="fa fa-group" aria-hidden="true"></i>
+			          </div>
+			          <div class="title">Heat System</div>
+			        </a>
+			      </li>
+			      <li>
+			        <a href="{{ path('resourceLimitIndex') }}">
+			          <div class="icon">
+			            <i class="fa fa-group" aria-hidden="true"></i>
+			          </div>
+			          <div class="title">Ressources Limites</div>
+			        </a>
+			      </li>
+			      <li>
+			        <a href="{{ path('statusIndex') }}">
+			          <div class="icon">
+			            <i class="fa fa-group" aria-hidden="true"></i>
+			          </div>
+			          <div class="title">Status</div>
+			        </a>
+			      </li>
+			    </ul>
+			  </div>
+			  <div class="sidebar-footer">
+			    <ul class="menu">
+			      <li>
+			        <a href="/" class="dropdown-toggle" data-toggle="dropdown">
+			          <i class="fa fa-cogs" aria-hidden="true"></i>
+			        </a>
+			      </li>
+			      <li><a href="#"><span class="flag-icon flag-icon-th flag-icon-squared"></span></a></li>
+			    </ul>
+			  </div>
+			</aside>
+
+			<div class="app-container">
+
+                <div class="col-lg-12">
+                	{% for flash_message in app.session.flashBag.get('notice') %}
+                    	<div class="flash-notice alert alert-success">
+                    		{{ flash_message }}
+                    	</div>
+                  	{% endfor %}
+                  	{% for flash_message in app.session.flashBag.get('error') %}
+                    	<div class="flash-notice alert alert-danger">
+                      		{{ flash_message }}
+                    	</div>
+                  	{% endfor %}
+
+            		{% block body %}{% endblock %}
+            	</div>
+
+
+
+
+
+
+
+
+
+			<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+			  <div class="modal-dialog">
+			    <div class="modal-content">
+			      <div class="modal-header">
+			        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+			        <h4 class="modal-title">Modal title</h4>
+			      </div>
+			      <div class="modal-body">
+			        <p>Are you sure you want to ?</p>
+			      </div>
+			      <div class="modal-footer">
+			        <button type="button" class="btn btn-sm btn-default" data-dismiss="modal">Close</button>
+			        <button type="button" class="btn btn-sm btn-success">Save changes</button>
+			      </div>
+			    </div>
+			  </div>
+			</div>
+
+
+
+
+
+
+
+
+
+				<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+				<script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+				<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+				<!-- <script type="text/javascript" src="{{ asset('js/vendor.js') }}"></script>
+				<script type="text/javascript" src="{{ asset('js/app.js') }}"></script>
+				<script src="{{ asset('js/rating.min.js') }}"></script> -->
+				{% block dataviz %}{% endblock %}
+
+
+				<script type="text/javascript" src="{{ asset('js/creemson.js') }}"></script>
+
+			    <!-- JS routing -->
+			    <script src="{{ asset('bundles/fosjsrouting/js/router.js') }}"></script>
+			    <script src="{{ path('fos_js_routing_js', { callback: 'fos.Router.setData' }) }}"></script>
+			
+			{% block javascripts %}{% endblock %}
+
+		</div>
+	</body>
+</html>

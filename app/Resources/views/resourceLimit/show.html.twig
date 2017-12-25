@@ -1,0 +1,40 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Resourcelimit</h1>
+
+    <table>
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ resourceLimit.id }}</td>
+            </tr>
+            <tr>
+                <th>Household</th>
+                <td>{{ resourceLimit.household }}</td>
+            </tr>
+            <tr>
+                <th>Resource</th>
+                <td>{{ resourceLimit.resource }}</td>
+            </tr>
+            <tr>
+                <th>Isiledefrance</th>
+                <td>{% if resourceLimit.isIleDeFrance %}Yes{% else %}No{% endif %}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('resourcelimit_index') }}">Back to the list</a>
+        </li>
+        <li>
+            <a href="{{ path('resourcelimit_edit', { 'id': resourceLimit.id }) }}">Edit</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+{% endblock %}

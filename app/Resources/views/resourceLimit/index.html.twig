@@ -1,0 +1,63 @@
+{% extends 'base_back.html.twig' %}
+{% block title %}{{ parent() }}Ressources Limites{% endblock %}
+
+{% block body %}
+    <!-- header Page -->
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="card">
+                <div class="card-body app-heading">
+                    <img class="profile-img" src="http://placehold.it/150x150">
+                    <div class="app-title">
+                        <div class="title"><span class="highlight">Ressources Limites</span></div>
+                        <div class="description">lorem ipsum dolor</div>
+                    </div>
+                    <a href="{{ path('resourceLimitNew') }}">
+                        <button type="button" class="btn btn-success">Nouvelle ressouce limite</button>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="card">
+                <div class="card-header">
+                <span class="badge badge-info badge-icon"><i class="fa fa-star" aria-hidden="true"></i><span>Number of Prospect</span>
+                </div>
+                <div class="card-body no-padding">
+                    <table class="datatable table table-striped primary" cellspacing="0" width="100%">
+                        <thead>
+                        <tr>
+                            <th>household</th>
+                            <th>ressource</th>
+                            <th>is Ile de France</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        {% for resourceLimit in resourceLimits %}
+                            <tr>
+                                <td>{{ resourceLimit.household }}</td>
+                                <td>{{ resourceLimit.resource }}</td>
+                                <td>{{ resourceLimit.isIleDeFrance }}</td>
+                                <td>
+                                <td>
+                                    <ul>
+                                        <li>
+                                            <a href="{{ path('resourceLimitEdit', { 'id': resourceLimit.id }) }}">
+                                                <button type="button" class="btn btn-warning">edit</button>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </td>
+                            </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

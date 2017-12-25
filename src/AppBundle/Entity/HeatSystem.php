@@ -137,4 +137,9 @@ class HeatSystem
     {
         return $this->prospects;
     }
+
+    public function getFormField() {
+        $label_img = $this->label . '#' . $this->img;
+        return $label_img;   /* or an array with only the needed attributes */
+    }
 }

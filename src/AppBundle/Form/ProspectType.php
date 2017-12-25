@@ -15,6 +15,8 @@ use Symfony\Component\Form\Extension\Core\Type\IntegerType;
 use Symfony\Component\Form\Extension\Core\Type\RadioType;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 
+use Doctrine\ORM\EntityRepository;
+
 
 class ProspectType extends AbstractType
 {
@@ -23,6 +25,7 @@ class ProspectType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
+
         $builder
             ->add('loftType', EntityType::class, array(
                 'label' => 'Vous habitez ?',
@@ -36,11 +39,11 @@ class ProspectType extends AbstractType
             ->add('heatSystem', EntityType::class, array(
                 'label' => 'Votre système de chauffage principale ?',
                 'class' => 'AppBundle:HeatSystem',
-                'choice_label' => 'label',
+                'choice_label' => 'formField',
                 'expanded' => true,
                 'attr' => [
                     'class' => 'form-control'
-                ]
+                ],
             ))
             ->add('livrableSurface', TextType::class, [
                 'label' => 'Superficie habitable :'

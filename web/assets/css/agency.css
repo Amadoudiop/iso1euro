@@ -104,16 +104,31 @@ img::-moz-selection {
 body {
   -webkit-tap-highlight-color: #1E8BC3; }
 
+h2,
+.timeline-panel,
+.timeline-image,
+.btn,
+.text-muted,
+.clients img,
+.intro-lead-in,
+.intro-heading,
+#contactForm,
+.contact-info,
+.img-left,
+.img-right {
+  opacity: 0; }
+
 #mainNav {
   background-color: #166c98; }
   #mainNav .navbar-toggler {
-    font-size: 12px;
+    font-size: 17px;
     right: 0;
-    padding: 13px;
+    padding: 10px;
     text-transform: uppercase;
     color: white;
     border: 0;
     background-color: #1E8BC3;
+    border-radius: 0;
     font-family: 'Roboto Slab', 'Helvetica Neue', Helvetica, Arial, sans-serif; }
   #mainNav .navbar-brand {
     color: #fff;
@@ -467,6 +482,15 @@ section#contact {
   /* background-image: url('../img/map-image.png'); */
   background-repeat: no-repeat;
   background-position: center; }
+  section#contact #secondStep,
+  section#contact #thirdStep,
+  section#contact #fourthStep,
+  section#contact #fifthStep {
+    display: none; }
+  section#contact .no-padding {
+    padding: 0; }
+  section#contact .col-md-6, section#contact .col-md-12 {
+    float: left; }
   section#contact .section-heading {
     color: #fff; }
   section#contact .form-group {
@@ -493,7 +517,8 @@ section#contact {
     section#contact .form-group span.radio {
       border: 1px solid #fff;
       padding: 15px;
-      color: #fff; }
+      color: #fff;
+      display: inline-block; }
       section#contact .form-group span.radio:hover {
         color: #1E8BC3;
         background: #fff; }

@@ -6,7 +6,6 @@ use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
 use AppBundle\Validator\Constraints as ProspectAssert;
 
-
 /**
  * Prospect
  *
@@ -60,7 +59,6 @@ class Prospect
 
     /**
      * @var float
-     * @Assert\NotBlank
      * @Assert\NotBlank
      * @Assert\Range(
      *      min = 1,
@@ -130,6 +128,12 @@ class Prospect
      */
     private $email;
 
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="last_update", type="date")
+     */
+    private $lastUpdate;
 
     /**
      * Many Prospects have One LoftType.
@@ -155,6 +159,19 @@ class Prospect
      */
     private $callAvailability;
 
+    /**
+     * Many Prospects have One Status.
+     *
+     * @ORM\ManyToOne(targetEntity="Status", inversedBy="prospects")
+     * @ORM\JoinColumn(name="status_id", referencedColumnName="id")
+     */
+    private $status;
+
+
+    public function __construct()
+    {
+        $this->lastUpdate = new \DateTime();
+    }
 
     /**
      * Get id
@@ -480,5 +497,53 @@ class Prospect
     public function getCallAvailability()
     {
         return $this->callAvailability;
+    }
+
+    /**
+     * Set status
+     *
+     * @param \AppBundle\Entity\Status $status
+     *
+     * @return Prospect
+     */
+    public function setStatus(\AppBundle\Entity\Status $status = null)
+    {
+        $this->status = $status;
+
+        return $this;
+    }
+
+    /**
+     * Get status
+     *
+     * @return \AppBundle\Entity\Status
+     */
+    public function getStatus()
+    {
+        return $this->status;
+    }
+
+    /**
+     * Set lastUpdate
+     *
+     * @param \DateTime $lastUpdate
+     *
+     * @return Prospect
+     */
+    public function setLastUpdate($lastUpdate)
+    {
+        $this->lastUpdate = $lastUpdate;
+
+        return $this;
+    }
+
+    /**
+     * Get lastUpdate
+     *
+     * @return \DateTime
+     */
+    public function getLastUpdate()
+    {
+        return $this->lastUpdate;
     }
 }

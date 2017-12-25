@@ -3,6 +3,7 @@
 namespace AppBundle\Controller;
 
 use AppBundle\Entity\Prospect;
+use AppBundle\Entity\Status;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
@@ -27,6 +28,10 @@ class DefaultController extends Controller
 
         if ($form->isSubmitted() && $form->isValid()) {
             $em = $this->getDoctrine()->getManager();
+            $status = $this->getDoctrine()
+                ->getRepository(Status::class)
+                ->find(1);
+            $prospect->setStatus($status);
             $em->persist($prospect);
             $em->flush();
 
