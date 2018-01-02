@@ -11,7 +11,7 @@ use Symfony\Component\HttpFoundation\Request;
 /**
  * Prospect controller.
  *
- * @Route("test/prospect")
+ * @Route("isoadmin/prospect")
  */
 class ProspectController extends Controller
 {

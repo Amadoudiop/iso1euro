@@ -6,6 +6,7 @@ use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\FileType;
+use Symfony\Component\Form\Extension\Core\Type\TextType;
 
 
 class HeatSystemType extends AbstractType
@@ -16,9 +17,15 @@ class HeatSystemType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('label')
+            ->add('label', TextType::class, [
+                'label' => 'Label :',
+                'attr' => [
+                    'class' => 'form-control'
+                ]
+            ])
             ->add('img', FileType::class,[
-                'data_class' => null
+                'data_class' => null,
+                'label' => 'image'
             ]);
     }
     

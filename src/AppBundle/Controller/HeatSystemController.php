@@ -11,7 +11,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;use Symfony\Component
 /**
  * Heatsystem controller.
  *
- * @Route("test/heat-system")
+ * @Route("isoadmin/heat-system")
  */
 class HeatSystemController extends Controller
 {

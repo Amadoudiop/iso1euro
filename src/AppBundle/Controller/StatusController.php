@@ -10,7 +10,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;use Symfony\Component
 /**
  * Status controller.
  *
- * @Route("test/status")
+ * @Route("isoadmin/status")
  */
 class StatusController extends Controller
 {
@@ -128,7 +128,7 @@ class StatusController extends Controller
     private function createDeleteForm(Status $status)
     {
         return $this->createFormBuilder()
-            ->setAction($this->generateUrl('status_delete', array('id' => $status->getId())))
+            ->setAction($this->generateUrl('statusDelete', array('id' => $status->getId())))
             ->setMethod('DELETE')
             ->getForm()
             ;

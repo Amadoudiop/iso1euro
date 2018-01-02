@@ -10,7 +10,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;use Symfony\Component
 /**
  * Callavailability controller.
  *
- * @Route("test/call-availabilit")
+ * @Route("isoadmin/call-availabilit")
  */
 class CallAvailabilityController extends Controller
 {

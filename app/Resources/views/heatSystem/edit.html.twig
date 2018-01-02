@@ -8,11 +8,11 @@
                 <div class="card-body app-heading">
                     <img class="profile-img" src="http://placehold.it/150x150">
                     <div class="app-title">
-                        <div class="title"><span class="highlight">Syteme de chaleur edit</span></div>
-                        <div class="description">modifier une  disponibilité</div>
+                        <div class="title"><span class="highlight">Système de chaleur edit</span></div>
+                        <div class="description">modifier {{ heatSystem.label }}</div>
                     </div>
                     <a href="{{ path('heatSystemNew') }}">
-                        <button type="button" class="btn btn-success">Add new Syteme de chaleur</button>
+                        <button type="button" class="btn btn-success">Ajouter un nouveau système de chaleur</button>
                     </a>
                     <a href="{{ path('heatSystemIndex') }}">
                         <button type="button" class="btn btn-info">
@@ -41,7 +41,9 @@
                             {{ form_end(edit_form) }}
                         </div>
                         <div class="col-md-4">
-                            <img src="{{ heatSystem.img }}" alt="{{ heatSystem.label }}">
+                            {% if heatSystem.img %}
+                                <img src="{{ heatSystem.img }}" alt="{{ heatSystem.label }}">
+                            {% endif %}
                         </div>
                     </div>
                 </div>

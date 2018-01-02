@@ -10,7 +10,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;use Symfony\Component
 /**
  * Resourcelimit controller.
  *
- * @Route("test/resource-limit")
+ * @Route("isoadmin/resource-limit")
  */
 class ResourceLimitController extends Controller
 {

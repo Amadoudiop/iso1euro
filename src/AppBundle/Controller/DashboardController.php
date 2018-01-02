@@ -12,17 +12,34 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Response;
 
 class DashboardController extends Controller
 {
 
     /**
-     * @Route("/ahha/dashboard", name="dashboard")
+     * @Route("/test/dashboard", name="dashboard")
      * @return Response
      */
     public function indexAction()
     {
 
-        return $this->render('admin/dashboard.html.twig', []);
+        $em = $this->getDoctrine()->getManager();
+
+        $nbProspect = $em->getRepository('AppBundle:Prospect')
+            ->createQueryBuilder('t')
+            ->select('count(t.id)')
+            //->where('count(t.id)')
+            ->getQuery()->getSingleScalarResult();
+
+//        $nbOeuvres = $em->getRepository('AppBundle:Oeuvre')
+//            ->createQueryBuilder('t')
+//            ->select('count(t.id)')
+//            ->getQuery()->getSingleScalarResult();*/
+
+        return $this->render('admin/dashboard.html.twig', [
+            'nbProspect' => $nbProspect,
+
+        ]);
     }
 }

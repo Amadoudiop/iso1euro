@@ -72,13 +72,13 @@ swiftmailer:
     spool: { type: memory }
 
 # Sonata
-sonata_block:
-    default_contexts: [cms]
-    blocks:
-        # enable the SonataAdminBundle block
-        sonata.admin.block.admin_list:
-            contexts: [admin]
-        # ...
+#sonata_block:
+#    default_contexts: [cms]
+#    blocks:
+#        # enable the SonataAdminBundle block
+#        sonata.admin.block.admin_list:
+#            contexts: [admin]
+#        # ...
 
 
 # fos_ser Configuration

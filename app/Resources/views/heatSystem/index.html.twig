@@ -1,5 +1,5 @@
 {% extends 'base_back.html.twig' %}
-{% block title %}{{ parent() }}Prospects{% endblock %}
+{% block title %}{{ parent() }}Système de chaleur{% endblock %}
 
 {% block body %}
     <!-- header Page -->
@@ -9,11 +9,11 @@
                 <div class="card-body app-heading">
                     <img class="profile-img" src="http://placehold.it/150x150">
                     <div class="app-title">
-                        <div class="title"><span class="highlight">Disponiblilités</span></div>
+                        <div class="title"><span class="highlight">Système de chaleur</span></div>
                         <div class="description">lorem ipsum dolor</div>
                     </div>
                     <a href="{{ path('heatSystemNew') }}">
-                        <button type="button" class="btn btn-success">Nouvelle disponibilité</button>
+                        <button type="button" class="btn btn-success">Nouveau système de chaleur</button>
                     </a>
                 </div>
             </div>
@@ -23,9 +23,7 @@
     <div class="row">
         <div class="col-xs-12">
             <div class="card">
-                <div class="card-header">
-                <span class="badge badge-info badge-icon"><i class="fa fa-star" aria-hidden="true"></i><span>Number of Prospect</span>
-                </div>
+                <div class="card-header"></div>
                 <div class="card-body no-padding">
                     <table class="datatable table table-striped primary" cellspacing="0" width="100%">
                         <thead>
@@ -38,7 +36,7 @@
                         {% for heatSystem in heatSystems %}
                             <tr>
                                 <td>{{ heatSystem.label }}</td>
-                                <td>{{ heatSystem.img }}</td>
+                                <td><img src="{{ absolute_url(simple_directory) }}{{ heatSystem.img }}"></td>
                                 <td>
                                 <td>
                                     <ul>

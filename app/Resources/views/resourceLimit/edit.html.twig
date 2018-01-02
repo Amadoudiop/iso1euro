@@ -1,5 +1,5 @@
 {% extends 'base_back.html.twig' %}
-{% block title %}{{ parent() }}Edit ressource limite{% endblock %}
+{% block title %}{{ parent() }}Modifier resource limite{% endblock %}
 
 {% block body %}
     <div class="row">
@@ -8,11 +8,10 @@
                 <div class="card-body app-heading">
                     <img class="profile-img" src="http://placehold.it/150x150">
                     <div class="app-title">
-                        <div class="title"><span class="highlight">ressource limite edit</span></div>
-                        <div class="description">modifier une  disponibilité</div>
+                        <div class="title"><span class="highlight">resource limite edit</span></div>
                     </div>
                     <a href="{{ path('resourceLimitNew') }}">
-                        <button type="button" class="btn btn-success">Add new ressource limite</button>
+                        <button type="button" class="btn btn-success">Ajout ressource limite</button>
                     </a>
                     <a href="{{ path('resourceLimitIndex') }}">
                         <button type="button" class="btn btn-info">

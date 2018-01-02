@@ -18,16 +18,16 @@ class AppKernel extends Kernel
             new AppBundle\AppBundle(),
 
             // These are the other bundles the SonataAdminBundle relies on
-            new Sonata\CoreBundle\SonataCoreBundle(),
-            new Sonata\BlockBundle\SonataBlockBundle(),
-            new Knp\Bundle\MenuBundle\KnpMenuBundle(),
-            new Sonata\EasyExtendsBundle\SonataEasyExtendsBundle(),
-
-            // And finally, the storage and SonataAdminBundle
-            new Sonata\AdminBundle\SonataAdminBundle(),
-            new Sonata\DoctrineORMAdminBundle\SonataDoctrineORMAdminBundle(),
-            new Exporter\Bridge\Symfony\Bundle\SonataExporterBundle(),
-
+//            new Sonata\CoreBundle\SonataCoreBundle(),
+//            new Sonata\BlockBundle\SonataBlockBundle(),
+//            new Knp\Bundle\MenuBundle\KnpMenuBundle(),
+//            new Sonata\EasyExtendsBundle\SonataEasyExtendsBundle(),
+//
+//            // And finally, the storage and SonataAdminBundle
+//            new Sonata\AdminBundle\SonataAdminBundle(),
+//            new Sonata\DoctrineORMAdminBundle\SonataDoctrineORMAdminBundle(),
+//            new Exporter\Bridge\Symfony\Bundle\SonataExporterBundle(),
+//
 
             new FOS\UserBundle\FOSUserBundle(),
             new FOS\JsRoutingBundle\FOSJsRoutingBundle(),

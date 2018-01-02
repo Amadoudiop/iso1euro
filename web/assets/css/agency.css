@@ -1,6 +1,6 @@
 /*!
  * Start Bootstrap - Agency v4.0.0-beta.2 (https://startbootstrap.com/template-overviews/agency)
- * Copyright 2013-2017 Start Bootstrap
+ * Copyright 2013-2018 Start Bootstrap
  * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap-agency/blob/master/LICENSE)
  */
 body {
@@ -477,11 +477,26 @@ header.masthead {
   .team-member p {
     margin-top: 0; }
 
+label:hover {
+  cursor: pointer; }
+
+.btn:hover {
+  cursor: pointer; }
+
+.errorHandler {
+  color: #ff0018 !important; }
+
+.warning {
+  color: orange !important; }
+
 section#contact {
   background-color: #1E8BC3;
   /* background-image: url('../img/map-image.png'); */
   background-repeat: no-repeat;
   background-position: center; }
+  section#contact .btn-next,
+  section#contact button#submit {
+    float: right; }
   section#contact #secondStep,
   section#contact #thirdStep,
   section#contact #fourthStep,
