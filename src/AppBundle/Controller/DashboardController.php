@@ -18,7 +18,7 @@ class DashboardController extends Controller
 {
 
     /**
-     * @Route("/test/dashboard", name="dashboard")
+     * @Route("/isoadmin/", name="dashboard")
      * @return Response
      */
     public function indexAction()

@@ -1,0 +1,61 @@
+{% extends 'base_back.html.twig' %}
+
+{% block body %}
+    <h1>Landingpages list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Header_title</th>
+                <th>Header_subtitle</th>
+                <th>Header_button</th>
+                <th>First_title</th>
+                <th>First_description</th>
+                <th>First_button</th>
+                <th>Second_title</th>
+                <th>Second_description</th>
+                <th>Second_button</th>
+                <th>Third_title</th>
+                <th>Third_description</th>
+                <th>Third_button</th>
+                <th>Fourth_title</th>
+                <th>Fourth_description</th>
+                <th>Fourth_button</th>
+                <th>Fifth_title</th>
+                <th>Fifth_description</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for landingPage in landingPages %}
+            <tr>
+                <td>{{ landingPage.headertitle }}</td>
+                <td>{{ landingPage.headersubtitle }}</td>
+                <td>{{ landingPage.headerbutton }}</td>
+                <td>{{ landingPage.firsttitle }}</td>
+                <td>{{ landingPage.firstdescription }}</td>
+                <td>{{ landingPage.firstbutton }}</td>
+                <td>{{ landingPage.secondtitle }}</td>
+                <td>{{ landingPage.seconddescription }}</td>
+                <td>{{ landingPage.secondbutton }}</td>
+                <td>{{ landingPage.thirdtitle }}</td>
+                <td>{{ landingPage.thirddescription }}</td>
+                <td>{{ landingPage.thirdbutton }}</td>
+                <td>{{ landingPage.fourthtitle }}</td>
+                <td>{{ landingPage.fourthdescription }}</td>
+                <td>{{ landingPage.fourthbutton }}</td>
+                <td>{{ landingPage.fifthtitle }}</td>
+                <td>{{ landingPage.fifthdescription }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('landingPageEdit', { 'id': landingPage.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

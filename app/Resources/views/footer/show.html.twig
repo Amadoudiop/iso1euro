@@ -1,0 +1,44 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Footer</h1>
+
+    <table>
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ footer.id }}</td>
+            </tr>
+            <tr>
+                <th>Twitter_link</th>
+                <td>{{ footer.twitterlink }}</td>
+            </tr>
+            <tr>
+                <th>Facebook_link</th>
+                <td>{{ footer.facebooklink }}</td>
+            </tr>
+            <tr>
+                <th>Linkedin_link</th>
+                <td>{{ footer.linkedinlink }}</td>
+            </tr>
+            <tr>
+                <th>Copyright</th>
+                <td>{{ footer.copyright }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('footer_index') }}">Back to the list</a>
+        </li>
+        <li>
+            <a href="{{ path('footer_edit', { 'id': footer.id }) }}">Edit</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+{% endblock %}

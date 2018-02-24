@@ -41,48 +41,72 @@ class ProspectAdminType extends AbstractType
                 'class' => 'AppBundle:LoftType',
                 'choice_label' => 'label',
                 'expanded' => true,
-                'attr' => [
-                    'class' => 'form-control'
-                ]
             ))
             ->add('heatSystem', EntityType::class, array(
                 'label' => 'Votre système de chauffage principale ?',
                 'class' => 'AppBundle:HeatSystem',
                 'choice_label' => 'label',
                 'expanded' => true,
-                'attr' => [
-                    'class' => 'form-control'
-                ],
             ))
             ->add('livrableSurface', TextType::class, [
-                'label' => 'Superficie habitable :'
+                'label' => 'Superficie habitable :',
+                'attr' => [
+                    'class' => 'form-control'
+                ]
             ])
             ->add('loftSurface', TextType::class, [
-                'label' => 'Superficie de vos combles :'
+                'label' => 'Superficie de vos combles :',
+                'attr' => [
+                    'class' => 'form-control'
+                ]
             ])
             ->add('household', TextType::class, [
-                'label' => 'Personne dans le foyer :'
+                'label' => 'Personne dans le foyer :',
+                'attr' => [
+                    'class' => 'form-control'
+                ]
             ])
             ->add('incomeTaxReference', TextType::class, [
-                'label' => 'Votre revenu fiscal de référence :'
+                'label' => 'Votre revenu fiscal de référence :',
+                'attr' => [
+                    'class' => 'form-control'
+                ]
             ])
             ->add('name', TextType::class, [
-                'label' => 'Nom :'
+                'label' => 'Nom :',
+                'attr' => [
+                    'class' => 'form-control'
+                ]
             ])
             ->add('firstName', TextType::class, [
-                'label' => 'Prénom :'
+                'label' => 'Prénom :',
+                'attr' => [
+                    'class' => 'form-control'
+                ]
             ])
             ->add('phone', TextType::class, [
-                'label' => 'Téléphone :'
+                'label' => 'Téléphone :',
+                'attr' => [
+                    'class' => 'form-control'
+                ]
             ])
             ->add('zipCode', TextType::class, [
-                'label' => 'Code Postal :'
+                'label' => 'Code Postal :',
+                'attr' => [
+                    'class' => 'form-control'
+                ]
             ])
             ->add('city', TextType::class, [
-                'label' => 'Ville :'
+                'label' => 'Ville :',
+                'attr' => [
+                    'class' => 'form-control'
+                ]
             ])
             ->add('email', EmailType::class, [
-                'label' => 'Email :'
+                'label' => 'Email :',
+                'attr' => [
+                    'class' => 'form-control'
+                ]
             ])
 //            ->add('lastUpdate', DateType::class, [
 //                'label' => 'Date de publication'
@@ -94,7 +118,7 @@ class ProspectAdminType extends AbstractType
                 'choice_label' => 'label',
                 'expanded' => true,
                 'attr' => [
-                    'class' => 'form-control'
+                    'class' => ''
                 ]
             ));
 

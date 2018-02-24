@@ -34,45 +34,6 @@ services:
     #     arguments:
     #         $someArgument: 'some_value'
 
-    # ...
-#    admin.prospect:
-#        class: AppBundle\Admin\ProspectAdmin
-#        arguments: [~, AppBundle\Entity\Prospect, ~]
-#        tags:
-#            - { name: sonata.admin, manager_type: orm, label: Prospects }
-#        public: true
-#
-#    # ...
-#    admin.call_availability:
-#        class: AppBundle\Admin\CallAvailabilityAdmin
-#        arguments: [~, AppBundle\Entity\CallAvailability, ~]
-#        tags:
-#            - { name: sonata.admin, manager_type: orm, label: Disponibilités }
-#        public: true
-#
-#    # ...
-#    admin.loft_type:
-#        class: AppBundle\Admin\LoftTypeAdmin
-#        arguments: [~, AppBundle\Entity\LoftType, ~]
-#        tags:
-#            - { name: sonata.admin, manager_type: orm, label: Type d'habitations }
-#        public: true
-#
-#    # ...
-#    admin.heat_system:
-#        class: AppBundle\Admin\HeatSystemAdmin
-#        arguments: [~, AppBundle\Entity\HeatSystem, ~]
-#        tags:
-#            - { name: sonata.admin, manager_type: orm, label: Chauffage principale }
-#        public: true
-#
-#    # ...
-#    admin.resource_limit:
-#        class: AppBundle\Admin\ResourceLimitAdmin
-#        arguments: [~, AppBundle\Entity\ResourceLimit, ~]
-#        tags:
-#            - { name: sonata.admin, manager_type: orm, label: Plafonds de ressources }
-#        public: true
 
     AppBundle\Service\Eligible:
         public: true

@@ -10,6 +10,8 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use AppBundle\Service\Eligible;
 
+use AppBundle\Entity\LandingPage;
+use AppBundle\Entity\Footer;
 
 
 class DefaultController extends Controller
@@ -20,6 +22,11 @@ class DefaultController extends Controller
      */
     public function indexAction(Request $request)
     {
+        $em = $this->getDoctrine()->getManager();
+
+        $footer = $em->getRepository('AppBundle:Footer')->find(1);
+        $landingPage = $em->getRepository('AppBundle:LandingPage')->find(1);
+
         $prospect = new Prospect();
 
 
@@ -54,6 +61,8 @@ class DefaultController extends Controller
             'base_dir' => realpath($this->getParameter('kernel.project_dir')).DIRECTORY_SEPARATOR,
             'prospect' => $prospect,
             'form' => $form->createView(),
+            'footer' => $footer,
+            'landingPage' => $landingPage
         ));
 
     }

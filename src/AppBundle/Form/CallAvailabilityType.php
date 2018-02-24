@@ -5,6 +5,7 @@ namespace AppBundle\Form;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Form\Extension\Core\Type\TextType;
 
 class CallAvailabilityType extends AbstractType
 {
@@ -13,7 +14,12 @@ class CallAvailabilityType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('label');
+        $builder->add('label', TextType::class, [
+            'label' => 'Label :',
+            'attr' => [
+                'class' => 'form-control'
+            ]
+        ]);
     }
     
     /**

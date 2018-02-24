@@ -42,54 +42,52 @@
 			  </div>
 			  <div class="sidebar-menu">
 			    <ul class="sidebar-nav">
-			      <li class="">
-			        <a href="{{ path('dashboard') }}">
-			          <div class="icon">
-			            <i class="fa fa-tasks" aria-hidden="true"></i>
-			          </div>
-			          <div class="title">Dashboard</div>
-			        </a>
-			      </li>
+                    <li class="">
+                        <a href="{{ path('dashboard') }}">
+                      <div class="icon">
+                        <i class="fa fa-tasks" aria-hidden="true"></i>
+                      </div>
+                      <div class="title">Dashboard</div>
+                    </a>
+                    </li>
                     <li>
-			        <a href="{{ path('prospectIndex') }}">
-			          <div class="icon">
-			            <i class="fa fa-group" aria-hidden="true"></i>
-			          </div>
-			          <div class="title">Prospects</div>
-			        </a>
-			      </li>
-			      <li>
-			        <a href="{{ path('callAvailabilityIndex') }}">
-			          <div class="icon">
-			            <i class="fa fa-clock-o" aria-hidden="true"></i>
-			          </div>
-			          <div class="title">Disponibilités</div>
-			        </a>
-			      </li>
-			      <li>
-			        <a href="{{ path('heatSystemIndex') }}">
-			          <div class="icon">
-			            <i class="fa fa-fire" aria-hidden="true"></i>
-			          </div>
-			          <div class="title">Heat System</div>
-			        </a>
-			      </li>
-			      <li>
-			        <a href="{{ path('resourceLimitIndex') }}">
-			          <div class="icon">
-			            <i class="fa fa-recycle" aria-hidden="true"></i>
-			          </div>
-			          <div class="title">Ressources Limites</div>
-			        </a>
-			      </li>
-			      <li>
-			        <a href="{{ path('statusIndex') }}">
-			          <div class="icon">
-			            <i class="fa fa-check-square" aria-hidden="true"></i>
-			          </div>
-			          <div class="title">Status</div>
-			        </a>
-			      </li>
+                        <a href="{{ path('prospectIndex') }}">
+                      <div class="icon">
+                        <i class="fa fa-group" aria-hidden="true"></i>
+                      </div>
+                      <div class="title">Prospects</div>
+                    </a>
+                    </li>
+                    <li class="dropdown">
+                        <a href="" class="dropdown-toggle" data-toggle="dropdown">
+                            <div class="icon">
+                                <i class="fa fa-cogs" aria-hidden="true"></i>
+                            </div>
+                            <div class="title">Configuration</div>
+                        </a>
+                        <div class="dropdown-menu">
+                            <ul>
+                                <li class="section"><a href="{{ path('callAvailabilityIndex') }}"><i class="fa fa-clock-o" aria-hidden="true"></i> Disponibilités</a></li>
+                                <li class="section"><a href="{{ path('heatSystemIndex') }}"><i class="fa fa-fire" aria-hidden="true"></i> Système de chaleur</a></li>
+                                <li class="section"><a href="{{ path('resourceLimitIndex') }}"><i class="fa fa-recycle" aria-hidden="true"></i> Ressources Limites</a></li>
+                                <li class="section"><a href="{{ path('statusIndex') }}"><i class="fa fa-check-square" aria-hidden="true"></i> Status</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="dropdown">
+                        <a href="" class="dropdown-toggle" data-toggle="dropdown">
+                            <div class="icon">
+                                <i class="fa fa-cogs" aria-hidden="true"></i>
+                            </div>
+                            <div class="title">CMS</div>
+                        </a>
+                        <div class="dropdown-menu">
+                            <ul>
+                                <li class="section"><a href="{{ path('landingPageEdit', { 'id': 1 }) }}"><i class="fa fa-fire" aria-hidden="true"></i> Landing Page</a></li>
+                                <li class="section"><a href="{{ path('footerEdit', { 'id': 1 }) }}"><i class="fa fa-clock-o" aria-hidden="true"></i> Footer</a></li>
+                            </ul>
+                        </div>
+                    </li>
 			    </ul>
 			  </div>
 			  <div class="sidebar-footer">
