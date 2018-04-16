@@ -1,0 +1,43 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Seos list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Title</th>
+                <th>Meta_description</th>
+                <th>Meta_author</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for seo in seos %}
+            <tr>
+                <td><a href="{{ path('seo_show', { 'id': seo.id }) }}">{{ seo.id }}</a></td>
+                <td>{{ seo.title }}</td>
+                <td>{{ seo.metadescription }}</td>
+                <td>{{ seo.metaauthor }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('seo_show', { 'id': seo.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('seo_edit', { 'id': seo.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('seo_new') }}">Create a new seo</a>
+        </li>
+    </ul>
+{% endblock %}

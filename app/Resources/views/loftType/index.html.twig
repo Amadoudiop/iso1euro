@@ -1,0 +1,59 @@
+{% extends 'base_back.html.twig' %}
+{% block title %}{{ parent() }}Type d'habitations{% endblock %}
+
+{% block body %}
+    <!-- header Page -->
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="card">
+                <div class="card-body app-heading">
+                    <img class="profile-img" src="http://placehold.it/150x150">
+                    <div class="app-title">
+                        <div class="title"><span class="highlight">Type d'habitation</span></div>
+                        <div class="description">lorem ipsum dolor</div>
+                    </div>
+                    <a href="{{ path('loftTypeNew') }}">
+                        <button type="button" class="btn btn-success">Nouveau Type d'habitation</button>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="card">
+                <div class="card-header">
+                </div>
+                <div class="card-body no-padding">
+                    <table class="datatable table table-striped primary" cellspacing="0" width="100%">
+                        <thead>
+                        <tr>
+                            <th>Plage</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        {% for loftType in loftTypes %}
+                            <tr>
+                                <td><a href="{{ path('loftTypeShow', { 'id': loftType.id }) }}">{{ loftType.id }}</a></td>
+                                <td>{{ loftType.label }}</td>
+                                <td>
+                                    <ul>
+                                        <li>
+                                            <a href="{{ path('loftTypeShow', { 'id': loftType.id }) }}">show</a>
+                                        </li>
+                                        <li>
+                                            <a href="{{ path('loftTypeEdit', { 'id': loftType.id }) }}">edit</a>
+                                        </li>
+                                    </ul>
+                                </td>
+                            </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

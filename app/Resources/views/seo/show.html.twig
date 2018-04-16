@@ -1,0 +1,40 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Seo</h1>
+
+    <table>
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ seo.id }}</td>
+            </tr>
+            <tr>
+                <th>Title</th>
+                <td>{{ seo.title }}</td>
+            </tr>
+            <tr>
+                <th>Meta_description</th>
+                <td>{{ seo.metadescription }}</td>
+            </tr>
+            <tr>
+                <th>Meta_author</th>
+                <td>{{ seo.metaauthor }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('seo_index') }}">Back to the list</a>
+        </li>
+        <li>
+            <a href="{{ path('seo_edit', { 'id': seo.id }) }}">Edit</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+{% endblock %}

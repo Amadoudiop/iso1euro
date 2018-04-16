@@ -2,10 +2,7 @@
 
 namespace AppBundle\DataFixtures\ORM;
 
-
-use Doctrine\Common\DataFixtures\AbstractFixture;
-use Doctrine\Common\DataFixtures\FixtureInterface;
-use Doctrine\Common\DataFixtures\OrderedFixtureInterface;
+use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Common\Persistence\ObjectManager;
 use AppBundle\Entity\Footer;
 
@@ -13,9 +10,7 @@ use AppBundle\Entity\Footer;
  * Class LoadData
  * @package AppBundle\DataFixtures\ORM
  */
-class FooterFixtures extends AbstractFixture implements
-    FixtureInterface,
-    OrderedFixtureInterface
+class FooterFixtures extends Fixture
 {
     /**
      * @param \Doctrine\Common\Persistence\ObjectManager $manager

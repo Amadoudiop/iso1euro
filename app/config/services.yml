@@ -34,7 +34,6 @@ services:
     #     arguments:
     #         $someArgument: 'some_value'
 
-
     AppBundle\Service\Eligible:
         public: true
         autowire: false

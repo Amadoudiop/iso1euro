@@ -5,8 +5,9 @@
 {% endif %}
 
 <form action="{{ path("fos_user_security_check") }}" method="post">
-    {% if csrf_token %}
-        <input type="hidden" name="_csrf_token" value="{{ csrf_token }}" />
+    {% if csrf_token('authenticate') %}
+        {#<input type="hidden" name="_csrf_token" value="{{ csrf_token }}" />#}
+        <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
     {% endif %}
     <div class="input-group">
       <span class="input-group-addon" id="basic-addon1">

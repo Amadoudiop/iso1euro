@@ -35,10 +35,6 @@
 			<aside class="app-sidebar" id="sidebar">
 			  <div class="sidebar-header">
 			    <a class="sidebar-brand" href="#"><span class="highlight">Iso1euro</span> Admin</a>
-			    <a class="" href="{{ path('homepage') }}" target="blank"><span class="highlight">homepage</span> </a>
-			    <button type="button" class="sidebar-toggle">
-			      <i class="fa fa-times"></i>
-			    </button>
 			  </div>
 			  <div class="sidebar-menu">
 			    <ul class="sidebar-nav">
@@ -67,6 +63,7 @@
                         </a>
                         <div class="dropdown-menu">
                             <ul>
+                                <li class="section"><a href="{{ path('loftTypeIndex') }}"><i class="fa fa-building" aria-hidden="true"></i> Type d'Habitations</a></li>
                                 <li class="section"><a href="{{ path('callAvailabilityIndex') }}"><i class="fa fa-clock-o" aria-hidden="true"></i> Disponibilités</a></li>
                                 <li class="section"><a href="{{ path('heatSystemIndex') }}"><i class="fa fa-fire" aria-hidden="true"></i> Système de chaleur</a></li>
                                 <li class="section"><a href="{{ path('resourceLimitIndex') }}"><i class="fa fa-recycle" aria-hidden="true"></i> Ressources Limites</a></li>
@@ -85,21 +82,30 @@
                             <ul>
                                 <li class="section"><a href="{{ path('landingPageEdit', { 'id': 1 }) }}"><i class="fa fa-fire" aria-hidden="true"></i> Landing Page</a></li>
                                 <li class="section"><a href="{{ path('footerEdit', { 'id': 1 }) }}"><i class="fa fa-clock-o" aria-hidden="true"></i> Footer</a></li>
+                                <li class="section"><a href="{{ path('seoEdit', { 'id': 1 }) }}"><i class="fa fa-clock-o" aria-hidden="true"></i> SEO</a></li>
                             </ul>
                         </div>
                     </li>
+					<li>
+						<a href="{{ path('homepage') }}" target="_blank">
+							<div class="icon">
+								<i class="fa fa-globe" aria-hidden="true"></i>
+							</div>
+							<div class="title">Landing Page</div>
+						</a>
+					</li>
 			    </ul>
 			  </div>
-			  <div class="sidebar-footer">
-			    <ul class="menu">
-			      <li>
-			        <a href="/" class="dropdown-toggle" data-toggle="dropdown">
-			          <i class="fa fa-cogs" aria-hidden="true"></i>
-			        </a>
-			      </li>
-			      <li><a href="#"><span class="flag-icon flag-icon-th flag-icon-squared"></span></a></li>
-			    </ul>
-			  </div>
+			  {#<div class="sidebar-footer">#}
+			    {#<ul class="menu">#}
+			      {#<li>#}
+			        {#<a href="/" class="dropdown-toggle" data-toggle="dropdown">#}
+			          {#<i class="fa fa-cogs" aria-hidden="true"></i>#}
+			        {#</a>#}
+			      {#</li>#}
+			      {#<li><a href="#"><span class="flag-icon flag-icon-th flag-icon-squared"></span></a></li>#}
+			    {#</ul>#}
+			  {#</div>#}
 			</aside>
 
 			<div class="app-container">

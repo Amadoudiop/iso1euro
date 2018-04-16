@@ -72,8 +72,6 @@ swiftmailer:
     spool: { type: memory }
 
 
-# fos_ser Configuration
-
 # FOSUser Configuration
 fos_user:
     db_driver: orm # other valid values are 'mongodb' and 'couchdb'
