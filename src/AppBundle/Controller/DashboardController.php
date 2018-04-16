@@ -29,17 +29,20 @@ class DashboardController extends Controller
         $nbProspect = $em->getRepository('AppBundle:Prospect')
             ->createQueryBuilder('t')
             ->select('count(t.id)')
-            //->where('count(t.id)')
             ->getQuery()->getSingleScalarResult();
 
-//        $nbOeuvres = $em->getRepository('AppBundle:Oeuvre')
-//            ->createQueryBuilder('t')
-//            ->select('count(t.id)')
-//            ->getQuery()->getSingleScalarResult();*/
+        $lastProspect = $em
+            ->createQueryBuilder()
+            ->select('p')
+            ->from('AppBundle:Prospect', 'p')
+            ->orderBy('p.id', 'DESC')
+            ->setMaxResults(1)
+            ->getQuery()
+            ->getOneOrNullResult();
 
         return $this->render('admin/dashboard.html.twig', [
             'nbProspect' => $nbProspect,
-
+            'lastProspect' => $lastProspect
         ]);
     }
 }
